@@ -14,6 +14,6 @@ test:
 
 lint:
 
-	pylint --disable=R,C app.py
+	pylint --disable=R,C app.py flask_app/web.py
 	
 all: install test lint	
