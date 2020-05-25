@@ -1,6 +1,6 @@
 setup:
-	python3 -m venv ~/.docker-flask-app
-	source ~/.docker-flask-app/bin/activate
+	python3 -m venv venv
+	source venv/bin/activate
 env:
 	#Show information about environment
 	which python3
