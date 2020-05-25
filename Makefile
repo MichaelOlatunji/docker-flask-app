@@ -14,6 +14,6 @@ test:
 
 lint:
 
-	pylint disabled=R,C app.py
+	pylint --disable=R,C app.py
 	
 all: install test lint	
