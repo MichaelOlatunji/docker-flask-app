@@ -15,11 +15,12 @@ install:
 lint:
 	pylint --load-plugins pylint_flask --disable=R,C flask_app/*.py nlib csvcli
 
-lint-circleci:                                                              
+lint-circleci:
+	hadolint Dockerfile
 	pylint --output-format=parseable --load-plugins pylint_flask --disable=R,C flask_app/*.py nlib csvcli > $$CIRCLE_ARTIFACTS/pylint.html  
 
 test-circleci:
-	@cd tests; pytest -vv --cov-report html:$$CIRCLE_ARTIFACTS --cov=web --cov=nlib test_*.py  
+	@cd tests; python3 -m pytest -vv --cov-report html:$$CIRCLE_ARTIFACTS --cov=web --cov=nlib test_*.py  
 
 test:
 	@cd tests; pytest -vv --cov-report term-missing --cov=web --cov=nlib test_*.py
