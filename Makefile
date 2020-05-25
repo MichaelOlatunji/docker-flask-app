@@ -16,8 +16,8 @@ lint:
 	pylint --load-plugins pylint_flask --disable=R,C flask_app/*.py nlib csvcli
 
 lint-circleci:
-	hadolint Dockerfile
-	hadolint --ignore DL3003 --ignore DL3013 Dockerfile 
+	#hadolint Dockerfile
+	#hadolint --ignore DL3000 --ignore DL3013 Dockerfile 
 	pylint --output-format=parseable --load-plugins pylint_flask --disable=R,C flask_app/*.py nlib csvcli > $$CIRCLE_ARTIFACTS/pylint.html  
 
 test-circleci:
